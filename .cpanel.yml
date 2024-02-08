@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/laciudad/public_html/
-    - /bin/cp -R dist/la-luciad $DEPLOYPATH
+    - /bin/cp src/app/index.html $DEPLOYPATH
