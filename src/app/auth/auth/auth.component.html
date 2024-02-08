@@ -1,0 +1,11 @@
+<div class="container-view-port__wrapper container-view-port__wrapper--top container-view-port__wrapper--bottom">
+  <div class="w-full flex items-start md:items-center justify-between mt-[20px]">
+    <div class="flex flex-col md:flex-row">
+      <a class="btn btn--primary mr-[1px] mb-[1px] md:mb-0" routerLink="/auth/dashboard">Dashboard</a>
+      <a class="btn btn--primary mr-[1px] mb-[1px] md:mb-0" routerLink="project">New Project</a>
+      <a class="btn btn--primary" routerLink="ihs">Upload HSE Policy</a>
+    </div>
+    <button class="btn btn--primary mr-3" type="button" (click)=" onLogout()">Logout</button>
+  </div>
+  <router-outlet></router-outlet>
+</div>

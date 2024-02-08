@@ -1,0 +1,204 @@
+<div class="app-home-wrapper">
+  <div class="app-page-container">
+    <div class="container-view-port__wrapper container-view-port__wrapper--top">
+      <app-carousel></app-carousel>
+    </div>
+    <!-- experience quality  -->
+    <div class="mt-6 mb-[71px] container-view-port__wrapper">
+      <h1 class="text-primary mb-4" data-aos="fade-up" data-aos-offset="0">
+        Welcome to La Ciudad Construction – Building Dreams,<br />
+        Creating Legacies
+      </h1>
+      <p
+        class="mb-[71px]"
+        data-aos="fade-up"
+        data-aos-delay="300"
+        data-aos-offset="0"
+      >
+        At La Ciudad, we don't just build structures; we craft dreams and
+        transform visions into reality. As a family-run construction company, we
+        bring decades of expertise, passion, and innovation to every project.<br
+          class="hidden md:block"
+        />
+      </p>
+    </div>
+    <!-- about  -->
+    <div
+      class="flex flex-col mb-[71px] app-home-services-wrapper__feature-row container-view-port__wrapper"
+    >
+      <div
+        class="app-home-services-wrapper__feature-column flex justify-center"
+      >
+        <img
+          class=""
+          data-aos="zoom-in"
+          src="/assets/images/background/about-banner.png"
+          alt=""
+        />
+      </div>
+      <div class="mt-6 lg:pl-[70px] app-home-services-wrapper__feature-column">
+        <h2
+          data-aos="fade-up"
+          data-aos-offset="0"
+          class="text-primary mb-4 app-home-services-wrapper__feature-column"
+        >
+          About LaCiudad
+        </h2>
+        <p data-aos="fade-up" data-aos-delay="100" class="mb-8">
+          We offer a wide range of construction services, including new
+          construction, renovation, and maintenance. We have the knowledge and
+          resources to get the job done right.
+        </p>
+        <a
+          data-aos="fade-up"
+          data-aos-delay="200"
+          routerLink="/contact-us"
+          class="btn btn--primary"
+          >Contact Us</a
+        >
+      </div>
+    </div>
+    <!-- partners  -->
+    <app-partners></app-partners>
+
+    <!-- Guarantee  -->
+    <div class="container-view-port__wrapper">
+      <h2 class="text-primary text-center mb-[72px]" data-aos="fade-in">
+        Why Choose La Ciudad?
+      </h2>
+      <!-- services  -->
+      <div
+        *ngFor="let service of services; let i = index"
+        [ngClass]="{
+          'lg:flex-row-reverse': !isEvenIndex(i),
+          'lg:flex-row': isEvenIndex(i)
+        }"
+        class="flex flex-col gap-10 app-home-services-wrapper"
+      >
+        <div
+          class="app-home-services-wrapper__feature-column"
+          [class.flex]="service.imgSrc !== '/assets/images/home-clients.svg'"
+        >
+          <img
+            [src]="service.imgSrc"
+            alt=""
+            [ngClass]="{ 'order-2': !isEvenIndex(i) }"
+            class="app-home-services-wrapper__img mx-auto"
+            data-aos="zoom-in"
+          />
+        </div>
+        <div class="app-home-services-wrapper__feature-column">
+          <h3 class="text-primary mb-4" data-aos="fade-up">
+            {{ service.title }}
+          </h3>
+          <p data-aos="fade-up" data-aos-delay="200">
+            {{ service.description }}
+          </p>
+        </div>
+      </div>
+
+      <!-- what we do  -->
+      <div class="container-view-port__wrapper">
+        <h2 class="text-primary mb-10">Explore Our Services</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <app-business-feature-card
+            *ngFor="let feature of businessFeatures; trackBy: trackById"
+            [feature]="feature"
+          >
+          </app-business-feature-card>
+        </div>
+      </div>
+
+      <!-- markets we specialize in  -->
+      <div class="mt-20 container-view-port__wrapper overflow-x-hidden">
+        <h2 class="text-primary text-center mb-10">Markets we Specialise in</h2>
+        <!--            <div class="grid grid-cols-1 lg:grid-cols-2 gap-[26px]">-->
+        <!--              <app-specialisation-card *ngFor="let specialisation of specialisations; trackBy: trackById"-->
+        <!--                                       [specialisation]="specialisation"></app-specialisation-card>-->
+        <!--            </div>-->
+        <div class="flex overflow-x-hidden" #specialization>
+          <div
+            class="flex basis-[100%] md:basis-[50%] flex-grow-0 flex-shrink-0"
+            style=""
+            *ngFor="let specialisation of specialisations; trackBy: trackById"
+          >
+            <div class="md:w-[95%]">
+              <app-specialisation-card
+                [specialisation]="specialisation"
+              ></app-specialisation-card>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center mt-[66px]">
+          <button class="mr-[39px]" (click)="onScrollLeft()">
+            <img src="/assets/images/icons/left.svg" alt="left arrow" />
+          </button>
+          <button class="ml-[39px]" (click)="onScrollRight()">
+            <img src="/assets/images/icons/right.svg" alt="right arrow" />
+          </button>
+        </div>
+      </div>
+
+      <!-- projects  -->
+      <ng-container *ngIf="projects$ | async as projects">
+        <ng-container *ngIf="projects.length">
+          <div class="mt-20 container-view-port__wrapper">
+            <h2 class="text-primary text-center mb-10">Selected Projects</h2>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-[60px]"
+            >
+              <app-project-card
+                *ngFor="let project of projects; trackBy: trackById"
+                [project]="project"
+              ></app-project-card>
+            </div>
+            <div class="flex justify-center">
+              <a routerLink="/projects" class="btn btn--primary">See More</a>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <!-- health safety enviroment  -->
+      <div
+        class="mt-20 gap-10 mb-10 container-view-port__wrapper container-view-port__wrapper--bottom app-home-services-wrapper__feature-row app-home-services-wrapper__feature-row--stretch"
+      >
+        <div
+          class="app-home-services-wrapper__feature-column lg:order-2 lg:flex lg:items-center align-center"
+        >
+          <img
+            data-aos="zoom-out"
+            class="app-home-services-wrapper__img w-full h-full"
+            src="/assets/images/home-building-safety.png"
+            alt=""
+          />
+        </div>
+        <div class="app-home-services-wrapper__feature-column lg:order-1">
+          <h3 class="text-primary mb-4 mt-6" data-aos="fade-up">
+            Health Safety Environment
+          </h3>
+          <p class="mb-[24px]" data-aos="fade-up" data-aos-delay="100">
+            We are fully committed to implementation of health and safety
+            practices of employees contractors and clients, as well as taking
+            measures to safeguard the environment and operational safety
+            excellence in accordance with contractual obligation and
+            environmentally responsible as required in the delivery of our
+            services.
+          </p>
+
+           <!-- href="/assets/1680554968698_HEALTH SAFETY AND ENVIRONMENT POLICY.pdf" -->
+          <a
+          (click)="onViewIHS()"
+            class="btn btn--primary cursor-pointer"
+
+            data-aos="fade-up"
+            data-aos-delay="250"
+            >View HSE Policy</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!--  <app-contact-us-widget></app-contact-us-widget>-->
+  </div>
+</div>

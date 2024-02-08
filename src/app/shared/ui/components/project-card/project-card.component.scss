@@ -1,0 +1,15 @@
+.project-card {
+  @apply cursor-pointer;
+
+  &__image {
+    //width: 100%;
+    height: 232px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__name {
+
+    @apply text-[23px] mt-4;
+  }
+}

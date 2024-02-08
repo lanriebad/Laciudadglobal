@@ -1,0 +1,37 @@
+<div class="app-team-member flex flex-col lg:flex-row mb-[89px]">
+  <div class="flex flex-col lg:basis-[30%]">
+    <img
+      [src]="teamMember.imgUrl"
+      [alt]="teamMember.name"
+      data-aos="zoom-in"
+      data-aos-delay="400"
+    />
+    <p class="text-primary uppercase mt-4" data-aos="fade-right">
+      {{ teamMember.name }}
+    </p>
+    <div
+      class="flex flex-row gap-5 items-center mb-6"
+      data-aos="fade-right"
+      data-aos-delay="200"
+    >
+      <div>
+        <a
+          *ngIf="teamMember.linkedinUrl !== ''"
+          href="{{ teamMember.linkedinUrl }}"
+          target="_blank"
+        >
+          <img
+            src="/assets/images/icons/linkedin-dark.svg"
+            alt="linkedin logo"
+          />
+        </a>
+      </div>
+      <p class="font-[600]">
+        {{ teamMember.position }}
+      </p>
+    </div>
+  </div>
+  <div class="lg:basis-[70%] lg:pl-[80px]">
+    <p data-aos="fade-left">{{ teamMember.bio }}</p>
+  </div>
+</div>

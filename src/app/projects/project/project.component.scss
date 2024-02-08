@@ -1,0 +1,13 @@
+.project-info {
+  &__value {
+    @apply font-bold;
+  }
+
+  &__label {
+    @apply text-grey;
+  }
+
+  &__img {
+    @apply bg-cover bg-no-repeat bg-center w-full lg:w-auto h-[232px] lg:h-[430px];
+  }
+}

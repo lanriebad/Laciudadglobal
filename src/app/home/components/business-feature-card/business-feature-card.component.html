@@ -1,0 +1,18 @@
+<div
+  class="business-feature__card"
+  [ngStyle]="{ 'background-image': 'url(' + feature.imageUrl + ')' }"
+  data-aos="zoom-in"
+  [attr.data-aos-delay]="feature.id * 100"
+>
+  <div class="business-feature__overlay">
+    <p class="business-feature__title text-white font-sans">
+      {{ feature.title }}
+    </p>
+    <a
+      class="business-feature__link btn btn--primary"
+      [routerLink]="feature.link"
+      [fragment]="feature.fragment"
+      >Read More</a
+    >
+  </div>
+</div>

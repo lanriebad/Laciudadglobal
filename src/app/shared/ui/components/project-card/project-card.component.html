@@ -1,0 +1,9 @@
+<div class="project-card" (click)="onNavigateToProject(project.requestId)">
+  <div class="project-card__image" [ngStyle]="{'background-image': 'url(' + project.constructionPhoto?.[0] + ')'}"></div>
+  <div>
+    <p class="text-primary project-card__name font-sans">{{project.projectName}}</p>
+    <div class="project-card__tags">
+
+    </div>
+  </div>
+</div>

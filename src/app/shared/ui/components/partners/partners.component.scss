@@ -1,0 +1,19 @@
+.partners-wrapper {
+  @apply bg-[#FAF9F9] mb-[71px] px-4 py-4;
+
+  &__title {
+    @apply text-center text-[24px] md:text-[33px] text-primary;
+  }
+
+  &__partners-img-wrapper {
+    @apply flex items-center justify-around;
+
+    .partners__partner-img {
+      @apply h-[120px];
+
+      &:last-of-type {
+        @apply h-[66px];
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "assets/styles/font";
+@import "aos/dist/aos.css";
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  @apply font-body;
+} /* You can add global styles to this file, and also import other style files */
+
+p {
+  line-height: 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-sans text-[24px] lg:text-[32px];
+}
+
+.app-page-container {
+  //@apply p-4 lg:p-[48px];
+}
+
+// Form Styles Start
+.form-control {
+  height: 56px;
+  background: #edf2f7;
+  border-radius: 6px;
+  @apply py-3.5 px-4;
+
+  &::placeholder {
+    color: #a0aec0;
+  }
+}
+// Form Styles End
+
+// Button Styles Start
+.btn {
+  @apply inline-block min-w-[208px];
+
+  &--primary {
+    @apply bg-primary text-white text-center py-3;
+  }
+}
+// Button Styles End
+button[disabled] {
+  @apply cursor-not-allowed opacity-40;
+}
+
+.container-view-port__wrapper {
+  @apply mx-auto w-full max-w-[1200px] px-4 lg:px-[48px];
+
+  &--top {
+    @apply pt-4 lg:pt-[48px];
+  }
+
+  &--bottom {
+    @apply pb-4 lg:pb-[48px];
+  }
+}

@@ -1,0 +1,15 @@
+<div class="login-container container-view-port__wrapper container-view-port__wrapper--top container-view-port__wrapper--bottom mb-10">
+  <form class="login-container__form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="form-group login-container__form-group">
+      <label class="login-container__label" for="email">Email</label>
+      <input type="email" id="email" class="form-control login-container__email" autocomplete="off" formControlName="email">
+    </div>
+
+    <div class="form-group login-container__form-group">
+      <label class="login-container__label" for="password">Password</label>
+      <input type="password" id="password" class="form-control login-container__password" autocomplete="off" formControlName="password">
+    </div>
+
+    <button class="btn btn--primary login-container__button" [disabled]="!loginForm.valid || loading">Login</button>
+  </form>
+</div>

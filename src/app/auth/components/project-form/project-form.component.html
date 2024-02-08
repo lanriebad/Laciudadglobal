@@ -1,0 +1,76 @@
+<div class="new-project">
+  <form class="new-project__form" [formGroup]="projectForm" (ngSubmit)="onCreateForm()">
+    <div class="form-group new-project__form-group">
+      <label for="project-name">Project Name</label>
+      <input type="text" id="project-name" class="form-control new-project__input" formControlName="projectName">
+    </div>
+
+    <div class="form-group new-project__form-group">
+      <label for="project-type">Project Type</label>
+      <input type="text" id="project-type" class="form-control new-project__input" formControlName="projectType">
+    </div>
+
+    <div class="form-group new-project__form-group">
+      <label for="industry">Industry</label>
+      <input type="text" id="industry" class="form-control new-project__input" formControlName="industry">
+    </div>
+
+    <div class="form-group new-project__form-group">
+      <label for="client-name">Client Name</label>
+      <input type="text" id="client-name" class="form-control new-project__input" formControlName="clientName">
+    </div>
+
+    <div class="form-group new-project__form-group">
+      <label for="description">Description</label>
+      <textarea  id="long-description" class="form-control new-project__input" formControlName="longDescription"></textarea>
+    </div>
+
+    <div class="form-group new-project__form-group">
+      <label for="completion-date">Project Completion Detail</label>
+      <select   formControlName="projectCompletionDetail" id="project-completion-detail" class="form-control new-project__input">
+        <option *ngFor="let detail of projectCompletionDetailOptions |async" [value]="detail">{{ detail }}</option>
+      </select>
+    </div>
+
+    <div class="form-group new-project__form-group" *ngIf="isProjectCompleted()">
+      <label for="completion-date">Date of Completion</label>
+      <input type="date" id="completion-date" class="form-control new-project__input"
+             formControlName="dateOfCompletion">
+    </div>
+
+
+
+    <div class="form-group new-project__form-group" formArrayName="photos">
+      <label>Photos</label>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3 mb-3" *ngIf="project?.constructionPhoto?.length">
+        <ng-container *ngFor="let imgUrl of project!.constructionPhoto; index as i;">
+          <div class="project-photo__wrapper relative">
+            <button type="button" class="absolute top-[10px] right-[10px] text-black w-[25px] h-[25px] rounded-full bg-white"
+              (click)="onEditPhoto(i)">&times;</button>
+            <img [src]="imgUrl" alt="" class="project-photo__img"/>
+          </div>
+        </ng-container>
+      </div>
+      <div class="form-group new-project__form-group new-project__form-group--flex w-[100%]"
+           *ngFor="let control of photoControls; index as i; last as last" [formGroupName]="i">
+        <input type="file"
+               [id]="'photo' + i"
+               class="form-control new-project__input basis-[75%]"
+               (change)="onGetDataUriForImage($event, i)"
+               formControlName="constructionPhoto">
+        <div class="new-project__photo-actions flex basis-[25%]">
+          <button class="new-project__photo-actions-btn new-project__photo-actions-btn--delete"
+                  (click)="onRemovePhoto(i)" *ngIf="photoControls.length > 1">&times;
+          </button>
+          <button class="new-project__photo-actions-btn new-project__photo-actions-btn--edit" (click)="onAddPhoto()"
+                  *ngIf="last">&plus;
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="btn btn--primary" [disabled]="!projectForm.valid || loading">Create Project</button>
+  </form>
+
+</div>

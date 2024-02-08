@@ -1,0 +1,19 @@
+<div class="projects">
+  <div
+    class="app-page-container container-view-port__wrapper container-view-port__wrapper--top container-view-port__wrapper--bottom"
+  >
+    <div
+      class="projects__banner md:h-[50vh] mb-[64px]"
+      data-aos="zoom-in-down"
+    ></div>
+
+    <h1 class="text-primary mb-[56px]">Projects</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <app-project-card
+        *ngFor="let project of projects$ | async; trackBy: trackById"
+        [project]="project"
+      ></app-project-card>
+    </div>
+  </div>
+  <!--  <app-contact-us-widget></app-contact-us-widget>-->
+</div>

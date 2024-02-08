@@ -1,0 +1,49 @@
+.footer {
+  @apply py-9 px-4 lg:pl-[50px];
+
+  &__logo {
+    @apply mb-10 lg:mb-0;
+  }
+
+  &__nav-link {
+    @apply mb-12 lg:mb-0;
+  }
+
+  &__info {
+    @apply my-5 lg:mb-0;
+  }
+
+  &__socials {
+    @apply flex justify-center gap-x-10;
+  }
+}
+
+.footer__nav-link {
+  text-decoration: none;
+  padding: 10px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.footer__nav-link:hover {
+  opacity: 1;
+}
+
+.footer__nav-link::before {
+  transition: 500ms;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: #ffff;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
+}

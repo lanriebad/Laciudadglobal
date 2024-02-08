@@ -1,0 +1,15 @@
+.about-us__member-tab {
+  @apply mb-10;
+
+  &-item {
+    @apply text-[#A0A2A6];
+    padding: 0.75rem 1.5rem;
+    display: inline-block;
+
+    &--active {
+      border-bottom: 2px solid;
+      @apply text-primary border-b-primary;
+    }
+  }
+
+}

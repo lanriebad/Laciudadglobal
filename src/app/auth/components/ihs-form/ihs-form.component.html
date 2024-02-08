@@ -1,0 +1,15 @@
+<div class="ihs-form-wrapper">
+  <form [formGroup]="ihsForm" (ngSubmit)="onUploadIhsForm()">
+    <div class="form-group ihs-form-wrapper__form-group">
+      <label for="ihs-policy">HSE Policy</label>
+      <input type="file"
+             id="ihs-policy"
+             class="form-control ihs-form-wrapper__input"
+             formControlName="safetyCertificate"
+             #ihsInputEl>
+    </div>
+    <button class="btn btn--primary" [disabled]="(!ihsForm.valid || loading)">
+      Upload
+    </button>
+  </form>
+</div>

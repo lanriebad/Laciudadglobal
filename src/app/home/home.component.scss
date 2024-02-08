@@ -1,0 +1,19 @@
+.app-home-services-wrapper {
+  @apply mb-[76px];
+
+  &__img {
+    @apply h-[308px];
+  }
+
+  &__feature-row {
+    @apply lg:flex lg:flex-row lg:justify-center lg:items-start;
+
+    &--stretch {
+      @apply lg:items-stretch;
+    }
+  }
+
+  &__feature-column {
+    @apply lg:basis-1/2;
+  }
+}

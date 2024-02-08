@@ -1,0 +1,44 @@
+.dashboard-container {
+  @apply w-full;
+
+  &__header {
+    @apply flex items-center justify-between w-full mt-[20px];
+  }
+
+  &__projects-item {
+    @apply flex items-center p-2 md:px-5 mt-4;
+    background-color: #F8F8F8;
+
+    &-img {
+      width: 100px;
+    }
+
+    &-img-wrapper {
+      @apply mr-4;
+    }
+
+    &-name {
+      @apply mb-0;
+    }
+  }
+
+  &__projects-item-details {
+    @apply w-full flex items-center justify-between;
+  }
+
+  &__project-item-actions {
+    @apply flex flex-col items-center md:flex-row;
+
+    * {
+      @apply min-w-[100px] flex items-center justify-center text-white py-2;
+    }
+  }
+
+  &__projects-delete {
+    @apply bg-[red] md:mr-3 mb-1 md:mb-0;
+  }
+
+  &__projects-edit {
+    @apply bg-primary;
+  }
+}

@@ -1,0 +1,219 @@
+<div
+  class="app-menu h-full flex lg:flex-col p-4 justify-between lg:justify-stretch lg:h-[80%] top-0 md:relative bg-white"
+>
+  <a data-aos="slide-right" routerLink="/" class="md:pl-[1rem] items-center">
+    <img src="/assets/images/logo/logo.svg" alt="logo" class="h-[2.75rem]" />
+  </a>
+  <button (click)="onToggleMenu()" data-aos="slide-left">
+    <img
+      src="/assets/images/hamburger-menu.svg"
+      alt="hamburger icon"
+      class="lg:hidden"
+    />
+  </button>
+
+  <ul
+    class="app-menu-drawer__nav-items--desktop hidden lg:flex lg:flex-col lg:grow-[2] lg:justify-between lg:pl-4 md:mt-10"
+  >
+    <li
+      data-aos="slide-right"
+      class="app-menu-drawer__nav-item"
+      routerLinkActive="app-menu-drawer__nav-item--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        class="navbar__nav-link nav-link-ltr"
+        routerLink="/"
+        (click)="onHideMenu()"
+        >Home</a
+      >
+    </li>
+    <li
+      data-aos-delay="200"
+      data-aos="slide-right"
+      class="app-menu-drawer__nav-item"
+      routerLinkActive="app-menu-drawer__nav-item--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        class="navbar__nav-link nav-link-ltr"
+        routerLink="/about-us"
+        (click)="onHideMenu()"
+        >Who we are</a
+      >
+    </li>
+    <li
+      data-aos-delay="400"
+      data-aos="slide-right"
+      class="app-menu-drawer__nav-item"
+      routerLinkActive="app-menu-drawer__nav-item--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        class="navbar__nav-link nav-link-ltr"
+        routerLink="/what-we-do"
+        (click)="onHideMenu()"
+        >What we do</a
+      >
+    </li>
+    <li
+      data-aos-delay="600"
+      data-aos="slide-right"
+      class="app-menu-drawer__nav-item"
+      routerLinkActive="app-menu-drawer__nav-item--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a
+        class="navbar__nav-link nav-link-ltr"
+        routerLink="/projects"
+        (click)="onHideMenu()"
+        >Projects
+      </a>
+    </li>
+    <li
+      class="app-menu-drawer__nav-item app-menu-drawer__nav-item--socials"
+      data-aos-delay="800"
+      data-aos="slide-right"
+    >
+      <div>
+        <a
+          href="https://mobile.facebook.com/La-Ciudad-Construction-Limited-109333055240638/"
+          target="_blank"
+        >
+          <img
+            src="/assets/images/icons/facebook-dark.svg"
+            alt="facebook logo"
+          />
+        </a>
+      </div>
+      <div>
+        <a
+          href="https://www.linkedin.com/company/la-ciudad-construction-limited/"
+          target="_blank"
+        >
+          <img
+            src="/assets/images/icons/linkedin-dark.svg"
+            alt="linkedin logo"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="https://www.instagram.com/laciudadbuild/" target="_blank">
+          <img
+            src="/assets/images/icons/instagram-dark.svg"
+            alt="instagram logo"
+          />
+        </a>
+      </div>
+    </li>
+    <li
+      class="app-menu-drawer__nav-item"
+      data-aos-delay="1000"
+      data-aos="slide-right"
+    >
+      <a
+        routerLink="/contact-us"
+        (click)="onHideMenu()"
+        class="btn btn--primary"
+        >ContactUs</a
+      >
+    </li>
+  </ul>
+
+  <div
+    class="app-menu-drawer"
+    [ngClass]="{ 'app-menu-drawer--visible': isMenuVisible }"
+  >
+    <div class="app-menu-drawer__overlay"></div>
+
+    <nav class="app-menu-drawer__nav">
+      <button (click)="onToggleMenu()" class="mb-[20px]">
+        <img
+          src="/assets/images/icons/close.svg"
+          alt="close"
+          data-aos="slide-right"
+        />
+      </button>
+      <img
+        src="/assets/images/logo/logo.svg"
+        alt="logo"
+        data-aos="slide-right"
+      />
+      <ul class="app-menu-drawer__nav-items">
+        <li
+          class="app-menu-drawer__nav-item"
+          routerLinkActive="app-menu-drawer__nav-item--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/" (click)="onHideMenu()">Home</a>
+        </li>
+        <li
+          class="app-menu-drawer__nav-item"
+          routerLinkActive="app-menu-drawer__nav-item--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/about-us" (click)="onHideMenu()">Who we are</a>
+        </li>
+        <li
+          class="app-menu-drawer__nav-item"
+          routerLinkActive="app-menu-drawer__nav-item--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/what-we-do" (click)="onHideMenu()">What we do</a>
+        </li>
+        <li
+          class="app-menu-drawer__nav-item"
+          routerLinkActive="app-menu-drawer__nav-item--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/projects" (click)="onHideMenu()">Projects</a>
+        </li>
+        <li
+          class="app-menu-drawer__nav-item app-menu-drawer__nav-item--socials"
+        >
+          <div>
+            <a
+              href="https://mobile.facebook.com/La-Ciudad-Construction-Limited-109333055240638/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/facebook-dark.svg"
+                alt="facebook logo"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.linkedin.com/company/la-ciudad-construction-limited/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/linkedin-dark.svg"
+                alt="linkedin logo"
+              />
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.instagram.com/laciudadbuild/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/instagram-dark.svg"
+                alt="instagram logo"
+              />
+            </a>
+          </div>
+        </li>
+        <li class="app-menu-drawer__nav-item">
+          <a
+            routerLink="/contact-us"
+            (click)="onHideMenu()"
+            class="btn btn--primary"
+            >ContactUs</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

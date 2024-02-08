@@ -1,0 +1,13 @@
+<div class="partners-wrapper">
+  <h2 class="partners-wrapper__title">Our Partners</h2>
+  <div class="partners-wrapper__partners-img-wrapper">
+    <img
+      data-aos="zoom-out"
+      [attr.data-aos-delay]="index * 250"
+      class="partners__partner-img"
+      [src]="partner['imgUrl']"
+      [alt]="partner['name']"
+      *ngFor="let partner of partners; let index = index"
+    />
+  </div>
+</div>

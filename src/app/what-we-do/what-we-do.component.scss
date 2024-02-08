@@ -1,0 +1,12 @@
+.what-we-do {
+  &__banner {
+    background: url("/assets/images/background/about-us-hero-bg.jpg") no-repeat center;
+    @apply min-h-[392px] bg-cover;
+  }
+}
+
+ul {
+  li {
+    @apply list-disc mb-4;
+  }
+}

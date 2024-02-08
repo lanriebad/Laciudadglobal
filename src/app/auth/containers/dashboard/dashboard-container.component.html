@@ -1,0 +1,35 @@
+<div class="dashboard-container">
+  <div class="dashboard-container__header">
+    <h1>Projects</h1>
+  </div>
+
+  <ng-container *ngIf="(projects$ | async)?.length; then projects else noProjects">
+  </ng-container>
+</div>
+
+
+<ng-template #projects>
+  <div class="dashboard-container__projects-list">
+    <div class="dashboard-container__projects-item" *ngFor="let project of projects$ | async">
+      <div class="dashboard-container__projects-item-img-wrapper">
+        <img class="dashboard-container__projects-item-img" [src]="project.constructionPhoto"
+             [alt]="project.clientName"/>
+      </div>
+      <div class="dashboard-container__projects-item-details">
+        <div>
+          <h2 class="dashboard-container__projects-item-name">{{ project.projectName }}</h2>
+          <p class="dashboard-container__projects-items-type">{{ project.projectType }}</p>
+          <p *ngIf="project.projectCompletionDetail" class="dashboard-container__projects-items-type">status: {{ project.projectCompletionDetail }}</p>
+        </div>
+        <div class="dashboard-container__project-item-actions">
+          <button (click)="onDeleteProject(project.requestId)" class="dashboard-container__projects-delete" type="button">Delete</button>
+          <a class="dashboard-container__projects-edit" [routerLink]="['project', project.requestId]">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noProjects>
+  You have added 0 projects
+</ng-template>

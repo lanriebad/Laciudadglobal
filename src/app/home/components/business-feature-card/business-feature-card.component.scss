@@ -1,0 +1,33 @@
+.business-feature {
+  &__title {
+    @apply mb-4 text-[24px] md:translate-y-[50px] transition duration-300;
+  }
+
+  &__link {
+    @apply md:translate-y-[100px] md:opacity-0 transition duration-500;
+  }
+
+  &__card {
+    @apply min-h-[316px] flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &:hover {
+      .business-feature {
+        &__title {
+          @apply md:translate-y-0;
+        }
+
+        &__link {
+          @apply md:translate-y-0 opacity-100;
+        }
+      }
+    }
+  }
+
+  &__overlay {
+    @apply flex flex-col items-start justify-end p-4 w-full overflow-hidden;
+    background: rgba(0, 0, 0, 0.56);
+  }
+}

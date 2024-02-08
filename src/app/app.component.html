@@ -1,0 +1,13 @@
+<div class="app-container relative flex flex-col lg:flex-row max-w-full">
+  <div class="lg:h-screen sticky top-0 z-20">
+    <app-menu></app-menu>
+  </div>
+
+  <div class="main-page-wrapper">
+    <div class="app-container__router-outlet-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+    <app-contact-us-widget *ngIf="showContactUsFooter"></app-contact-us-widget>
+    <app-footer></app-footer>
+  </div>
+</div>

@@ -1,0 +1,146 @@
+<div class="app-page-container">
+  <div
+    class="contact-us container-view-port__wrapper container-view-port__wrapper--top container-view-port__wrapper--bottom"
+  >
+    <app-banner></app-banner>
+    <div class="grid grid-cols-1 lg:grid-cols-2 my-[84px] gap-x-16">
+      <div>
+        <div>
+          <h1 class="text-primary mb-[44px]" data-aos="fade-right">
+            Explore the comprehensive construction services offered by La-Ciudad
+            Construction
+          </h1>
+        </div>
+        <div class="contact-us-details contact-us-details__address">
+          <p class="text-grey contact-us-details__label" data-aos="fade-right">
+            Head Office
+          </p>
+          <p
+            class="contact-us-details__value"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            40a, Oyibo Adjarho off Ayinde Akinmade, Admiralty Way, Lekki Phase
+            1,Lagos.
+          </p>
+        </div>
+
+        <div class="contact-us-details contact-us-details__email">
+          <p class="text-grey contact-us-details__label" data-aos="fade-right">
+            Email Address
+          </p>
+          <p
+            class="contact-us-details__value"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            info@laciudadglobal.com.
+          </p>
+        </div>
+
+        <div
+          class="contact-us-details contact-us-details__phone"
+          data-aos="fade-right"
+        >
+          <p class="text-grey contact-us-details__label">Phone Number</p>
+          <p
+            class="contact-us-details__value"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            +2349162227000, +2349082918423, +2348084022259
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <form
+          class="contact-us__form"
+          [formGroup]="contactUsForm"
+          (ngSubmit)="onSubmitContactUsForm()"
+        >
+          <div class="contact-us__form-group flex flex-col">
+            <label
+              for="full-name"
+              class="contact-us__form-label"
+              data-aos="fade-left"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              formControlName="fullName"
+              id="full-name"
+              class="form-control"
+              placeholder="Enter Here"
+              data-aos="zoom-in-left"
+              data-aos-delay="200"
+            />
+          </div>
+
+          <div class="contact-us__form-group flex flex-col">
+            <label
+              for="email"
+              class="contact-us__form-label"
+              data-aos="fade-left"
+              >Email</label
+            >
+            <input
+              type="email"
+              formControlName="email"
+              id="email"
+              class="form-control"
+              placeholder="Enter Here"
+              data-aos="zoom-in-left"
+              data-aos-delay="200"
+            />
+          </div>
+
+          <div class="contact-us__form-group flex flex-col">
+            <label
+              for="subject"
+              class="contact-us__form-label"
+              data-aos="fade-left"
+              >Subject of Message</label
+            >
+            <input
+              type="text"
+              formControlName="subject"
+              id="subject"
+              class="form-control"
+              placeholder="Enter Here"
+              data-aos="zoom-in-left"
+              data-aos-delay="200"
+            />
+          </div>
+
+          <div class="contact-us__form-group flex flex-col">
+            <label
+              for="message"
+              class="contact-us__form-label"
+              data-aos="fade-left"
+              >Enter Message Here</label
+            >
+            <textarea
+              type="text"
+              formControlName="message"
+              id="message"
+              class="form-control"
+              placeholder="Enter Here"
+              data-aos="zoom-in-left"
+              data-aos-delay="200"
+            ></textarea>
+          </div>
+
+          <button
+            data-aos="fade-up"
+            data-aos-delay="400"
+            class="btn btn--primary"
+            [disabled]="!contactUsForm.valid"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

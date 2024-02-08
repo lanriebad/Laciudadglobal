@@ -1,0 +1,13 @@
+.contact-us {
+  &-details {
+    @apply mb-14;
+
+    &__label {
+      @apply mb-5;
+    }
+  }
+
+  &__form-group {
+    @apply mb-[56px]
+  }
+}

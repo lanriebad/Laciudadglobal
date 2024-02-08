@@ -1,0 +1,20 @@
+<div class="app-specialisation__card flex flex-col h-[100%]">
+  <div
+    data-aos="zoom-in"
+    class="app-specialisation__img"
+    [ngStyle]="{ 'background-image': 'url(' + specialisation.imageUrl + ')' }"
+  >
+    <span
+      data-aos="slide-left"
+      data-aos-delay="100"
+      class="app-specialisation__card-title"
+      data-aos="fade-in"
+      >{{ specialisation.label }}</span
+    >
+  </div>
+  <div class="app-specialisation__card-body flex-grow-[1]">
+    <p data-aos="fade-in" data-aos-delay="400">
+      {{ specialisation.description }}
+    </p>
+  </div>
+</div>

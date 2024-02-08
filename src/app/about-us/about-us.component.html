@@ -1,0 +1,118 @@
+<div class="about-us-wrapper">
+  <div class="app-page-container">
+    <div class="container-view-port__wrapper container-view-port__wrapper--top">
+      <app-carousel></app-carousel>
+    </div>
+
+    <div
+      class="mb-[96px] container-view-port__wrapper container-view-port__wrapper--top"
+    >
+      <h1 class="text-primary mb-[16px]">About La Ciudad Construction</h1>
+      <p data-aos="fade-in" data-aos-delay="200">
+        La Ciudad Construction is not just a construction company; it's a legacy
+        of excellence passed down through generations. Founded by our father and
+        nurtured by three brothers – John Olajuwon Dada, Wale Dada, and Segun
+        Joshua Dada – we bring a unique blend of experience, innovation, and
+        family values to the construction industry.
+      </p>
+    </div>
+
+    <div class="mb-[96px] container-view-port__wrapper">
+      <h2
+        class="text-black text-center mb-[15px]"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        Our Mission
+      </h2>
+      <p
+        class="text-primary text-[28px] tracking-[0.06em] leading-[55px] text-center"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        <span class="text-[40px] font-bold">&#34;</span>
+        We strive to deliver diligent and efficient services that meet clients'
+        specific needs, paying attention to detail and ensuring maximum
+        satisfaction for both corporate and individual clients.
+        <span class="text-[40px] font-bold">&#34;</span>
+      </p>
+    </div>
+
+    <div
+      class="mb-[96px] flex flex-col lg:flex-row lg:items-center container-view-port__wrapper"
+    >
+      <div class="order-2 lg:order-1 lg:basis-[50%]">
+        <h2 class="text-primary my-4 lg:my-0" data-aos="fade-up">Our Vision</h2>
+        <p data-aos="fade-up" data-aos-delay="200">
+          To be the leading pioneer in world class construction and electrical
+          services, and also set a standard for others to follow in the
+          industry.
+        </p>
+      </div>
+      <div
+        data-aos="zoom-in"
+        class="order-1 lg:order-2 lg:basis-[50%] flex justify-center"
+      >
+        <img src="/assets/images/background/vision-banner.png" alt="" />
+      </div>
+    </div>
+
+    <!-- core values section  -->
+
+    <div class="container-view-port__wrapper">
+      <h2 class="text-primary text-center mb-[48px]">Core Values</h2>
+      <div class="grid lg:grid-cols-2 gap-5 lg:gap-10 mb-[48px]">
+        <app-value-card
+          data-aos="fade-up"
+          [ngClass]="{ 'lg:col-span-2': value.id === 5 }"
+          class="{{ value.bg_color }} p-5"
+          *ngFor="let value of core_values"
+          [valueItem]="value"
+        ></app-value-card>
+      </div>
+
+      <!-- team member card  -->
+
+      <div class="container-view-port__wrapper">
+        <h2 class="text-primary text-center mb-[48px]">Meet the Visionaries</h2>
+        <div class="flex justify-center w-[331px] mx-auto about-us__member-tab">
+          <!--        <span class="about-us__member-tab-item about-us__member-tab-item&#45;&#45;active">Management</span>-->
+          <!--        <span class="about-us__member-tab-item">Engineers</span>-->
+        </div>
+
+        <div>
+          <app-team-member-card
+            *ngFor="let member of managementTeam; trackBy: trackById"
+            [teamMember]="member"
+          ></app-team-member-card>
+        </div>
+      </div>
+
+      <div
+        class="container-view-port__wrapper container-view-port__wrapper--bottom"
+      >
+        <h2 class="text-primary text-center mb-10">Markets we Specialise in</h2>
+        <div class="flex overflow-x-hidden" #specialization>
+          <div
+            class="basis-[100%] md:basis-[50%] md:pr-[26px] flex-grow-0 flex-shrink-0"
+            style=""
+            *ngFor="let specialisation of specialisations; trackBy: trackById"
+          >
+            <app-specialisation-card
+              [specialisation]="specialisation"
+            ></app-specialisation-card>
+          </div>
+        </div>
+        <div class="flex items-center justify-center mt-[66px] mb-[120px]">
+          <button class="mr-[39px]" (click)="onScrollLeft()">
+            <img src="/assets/images/icons/left.svg" alt="left arrow" />
+          </button>
+          <button class="ml-[39px]" (click)="onScrollRight()">
+            <img src="/assets/images/icons/right.svg" alt="right arrow" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--  <app-contact-us-widget></app-contact-us-widget>-->
+  </div>
+</div>

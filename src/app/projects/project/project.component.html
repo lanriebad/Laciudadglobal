@@ -1,0 +1,44 @@
+<div class="project-wrapper">
+  <div
+    class="app-page-container container-view-port__wrapper container-view-port__wrapper--top container-view-port__wrapper--bottom"
+  >
+    <app-banner></app-banner>
+    <h1 class="text-primary mt-[35px] mb-[20px]">{{ project.projectName }}</h1>
+    <p class="project-info__description ">{{project.longDescription}}</p>
+    <div
+      class="project-info__wrapper grid grid-cols-2 lg:grid-cols-4 mb-[50px]"
+    >
+      <div class="project-info__details">
+        <p class="project-info__label">Client Name</p>
+        <p class="project-info__value">{{ project.clientName }}</p>
+      </div>
+
+      <div class="project-info__details">
+        <p class="project-info__label">Project Type</p>
+        <p class="project-info__value">{{ project.projectType }}</p>
+      </div>
+
+      <div class="project-info__details">
+        <p class="project-info__label">Industry</p>
+        <p class="project-info__value">{{ project.industry }}</p>
+      </div>
+      <div class="project-info__details" *ngIf="project.projectCompletionDetail">
+        <p class="project-info__label">Status of Project</p>
+        <p class="project-info__value">{{ project.projectCompletionDetail}}</p>
+      </div>
+      <div class="project-info__details" *ngIf="isProjectCompleted(project.projectCompletionDetail)">
+        <p class="project-info__label">Date of Completion</p>
+        <p class="project-info__value">{{ project.dateOfCompletion | date }}</p>
+      </div>
+    </div>
+
+    <div class="project-info__images grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div
+        class="project-info__img"
+        *ngFor="let projectImg of project.constructionPhoto"
+        [ngStyle]="{ 'background-image': 'url(' + projectImg + ')' }"
+      ></div>
+    </div>
+  </div>
+  <!--  <app-contact-us-widget></app-contact-us-widget>-->
+</div>
